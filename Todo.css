@@ -1,0 +1,255 @@
+/* Base styles */
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  transition: background 0.5s;
+}
+
+/* Header */
+header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* To-Do container */
+.todo-container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.todo-container h1 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Input area */
+.input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.input input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+}
+
+.input button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2575fc;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.input button:hover {
+  background: #6a11cb;
+  transform: scale(1.05);
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  word-break: break-word;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 0.5s forwards;
+  transition: background 0.3s, transform 0.3s, opacity 0.3s;
+}
+
+li:hover {
+  background: #e0e0e0;
+}
+
+li button {
+  background: #ff4d4d;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+li button:hover {
+  background: #ff1a1a;
+  transform: scale(1.1);
+}
+
+/* Completed task */
+li.completed {
+  text-decoration: line-through;
+  color: #999;
+  background: #dcdcdc;
+}
+
+/* Footer fixed at bottom */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+/* Responsive breakpoints */
+
+/* 1. Tablet */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+  .todo-container h1 {
+    font-size: 1.6rem;
+  }
+  .input input,
+  .input button {
+    font-size: 0.95rem;
+  }
+}
+
+/* 2. Mobile large */
+@media (max-width: 500px) {
+  .input {
+    flex-direction: column;
+  }
+  .input input,
+  .input button {
+    width: 100%;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .todo-container h1 {
+    font-size: 1.4rem;
+  }
+  li {
+    font-size: 0.95rem;
+  }
+}
+
+/* 3. Mobile small */
+@media (max-width: 350px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  .todo-container h1 {
+    font-size: 1.2rem;
+  }
+  li {
+    font-size: 0.9rem;
+  }
+  li button {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+}
+.more-projects-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.more-projects-btn button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2575fc;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.more-projects-btn button:hover {
+  background: #6a11cb;
+  transform: scale(1.05);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
